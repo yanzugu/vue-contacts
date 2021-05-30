@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js' integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <section v-if="loading">
+            loading...
+        </section>
+
+        <section v-else="loading">
+            <div class="container-fluid">
+                <div class="title">
+                    <div class="input">
+                        <input type="text" placeholder="會員名稱" v-model.trim="input.name">
+                        <input class="mx-2" type="text" placeholder="電子信箱" v-model.trim="input.email">
+                        <button class="btn btn-primary" @click="submitHandler">送出</button>
+                        <button class="btn btn-warning mx-2" @click="clearHandler">清除</button>
+                        <span v-if="editIndex != null">修改 {{ contacts[editIndex].name }}</span>
+                    </div>
+
+                    <div class="menu">
+                        <div class="menuItem" v-for="(item, index) in contacts">
+                            <span class="dot purple"><br>{{ item.id }}<br>&nbsp;</span>
+                            <span class="name"><br>{{ item.name }}<br>&nbsp;</span>
+                            <span class="email"><br>{{ item.email }}<br>&nbsp;</span>
+                            <div class="dot green" @click="updateHandler(index)"><br>edit<br>&nbsp;</div>
+                            <div class="dot red" @click="deleteHandler(index)"><br>del<br>&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

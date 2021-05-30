@@ -1,0 +1,53 @@
+.menuItem {
+    height: 30px;
+    padding: 0;
+    margin: 30px 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.title {
+    margin: 30px auto;
+    display: table;
+}
+
+.name {
+    width: 150px;
+    line-height: 100%;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #b3b600;
+}
+
+.email {
+    width: 300px;
+    line-height: 100%;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #00e0e0;
+}
+
+.dot {
+    width: 47px;
+    line-height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    color: #fff;
+}
+
+.green {
+    background-color: #0a0;
+}
+
+.red {
+    background-color: #c00;
+}
+
+.purple {
+    background-color: #800080;
+}
